@@ -7,7 +7,8 @@
  *
  * Deterministic: no randomness, no network, no clock. The entry is a fixed
  * string; a runtime guard enforces the competition gate before writing —
- * one line, 1-150 characters, not only white space.
+ * one line, 1-150 characters, not only white space. The read-back check
+ * after the write guarantees the file on disk is exactly the gated line.
  */
 
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
